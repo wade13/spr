@@ -473,7 +473,7 @@ func (c *client) MergePullRequest(ctx context.Context, pr *github.PullRequest) {
 			}
 		} `graphql:"mergePullRequest(input: $input)"`
 	}
-	mergeMethod := githubv4.PullRequestMergeMethodRebase
+	mergeMethod := githubv4.PullRequestMergeMethodMerge
 	mergePRInput := githubv4.MergePullRequestInput{
 		PullRequestID: pr.ID,
 		MergeMethod:   &mergeMethod,
